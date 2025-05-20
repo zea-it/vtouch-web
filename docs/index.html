@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <title>Vtouch Project Vtuber</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
@@ -19,9 +20,15 @@
     }
 
     header {
-      background-color: #1c1d20;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #101113;
+      transition: background-color 0.3s, box-shadow 0.3 ease;
       color: #ffffff;
-      padding: 0.5rem 1.2rem;
+      padding: 0.3rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -29,10 +36,15 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
+    header.scrolled {
+      background-color: #1c1d2000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+    }
+
     header h1 {
       margin: 0;
       font-size: 1.2rem;
-      font-weight: 400; /* จาก 700 → 400 */
+      font-weight: 400;
     }
 
     .logo-container {
@@ -42,7 +54,7 @@
     }
 
     .logo {
-      height: 2.6rem;
+      height: 2.4rem;
       width: auto;
     }
 
@@ -56,7 +68,7 @@
     }
 
     nav a:hover {
-      color: #66ccff;
+      color: #3a3a3a;
     }
 
     .hero {
@@ -64,7 +76,7 @@
       padding: 4rem 0;
       width: 100%;
       margin: 0;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://new.vtouch.cf/image/banner-dark.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://new.vtouch.cf/image/Logo Fix Full.png');
       background-size: cover;
       background-position: center;
       color: white;
@@ -87,13 +99,19 @@
 
     .social-links {
       margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
-    .social-links span {
-      margin: 0 0.5rem;
-      font-weight: 600;
-      cursor: pointer;
-      color: #1c1d20;
+    .social-links a {
+      color: #ffffff;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #494949;
     }
 
     .section-center {
@@ -243,19 +261,29 @@
       }
     }
   </style>
-  <meta name="description" content="Vtouch Project - โปรเจกต์สนับสนุน VTuber และทาเลนท์ พร้อมสร้างความเชื่อมโยงกับผู้ชมผ่านโลกเสมือนจริง">
+  <script>
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+  <meta name="description" content="Vtouch Project - โปรเจกต์สนับสนุน VTuber และทาเลนท์ พร้อมสร้างความเชื่อมโยงกับผู้ชมผ่านตรีมมิ่งและคอนเทนต์ที่มีคุณภาพ">
   <meta name="keywords" content="Vtouch, โปรเจกต์ VTuber, ไลฟ์สตรีม, VTuber ไทย, ทาเลนท์เสมือนจริง, สังกัด VTuber, Virtual Youtuber, Vtouch Project, vtp, vtuber">
   <meta name="author" content="ทีมงาน Vtouch Project">
 
-  <meta property="og:title" content="Vtouch Project - โปรเจกต์ VTuber เสมือนจริง">
+  <meta property="og:title" content="Vtouch Project - โปรเจกต์ VTuber">
   <meta property="og:description" content="ร่วมเป็นส่วนหนึ่งของ Vtouch Project ที่ซึ่ง VTuber และทาเลนท์สร้างสายสัมพันธ์กับผู้ชมผ่านอารมณ์ ความคิด และไลฟ์สตรีม">
   <meta property="og:image" content="https://new.vtouch.cf/image/Logo-Fix-2-png-light.png">
   <meta property="og:url" content="https://new.vtouch.cf">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Vtouch Project">
+  <meta property="og:site_name" content="Vtouch Project Vtuber">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vtouch Project - โปรเจกต์ VTuber เสมือนจริง">
+  <meta name="twitter:title" content="Vtouch Project - โปรเจกต์ VTuber">
   <meta name="twitter:description" content="VTuber และทาเลนท์ผู้ถ่ายทอดความรู้สึกจากใจสู่ใจ กับ Vtouch Project">
   <meta name="twitter:image" content="https://new.vtouch.cf/image/Logo-Fix-2-png-dark.png">
   <meta name="twitter:site" content="@VtouchProject">
@@ -282,10 +310,10 @@
     เอกลักษณ์สังกัด : ให้ความอิสระแก่ Vtuber</p>
 
     <div class="social-links">
-      <span>Youtube</span>
-      <span>Twitter</span>
-      <span>Discord</span>
-      <span>TikTok</span>
+      <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
     </div>
   </div>
 
@@ -296,6 +324,121 @@
       ที่นี่เป็นพื้นที่สำหรับการเชื่อมต่อระหว่างผู้ชมกับ VTuber ผ่านอารมณ์ ความคิด และเรื่องราวที่อยากแบ่งปัน
       เราหวังว่าคุณจะได้พบกับทาเล้นท์ที่คุณชื่นชอบ และร่วมเป็นส่วนหนึ่งของช่วงเวลาที่มีความหมายไปด้วยกัน
     </p>
+  </div>
+
+  <div class="image-slide">
+    <div class="carousel-wrapper">
+      <div class="carousel-track">
+          <!-- Amy Chan -->
+          <a href="https://www.vtouch.cf/member/amy-chan" target="_blank" class="carousel-item amy">
+            <img src="https://i.imgur.com/5FG8oXM.png" alt="Amy Chan">
+          </a>
+
+          <!-- Dear -->
+          <a href="https://www.vtouch.cf/member/dear" target="_blank" class="carousel-item dear">
+            <img src="https://i.imgur.com/jtgsqGQ.png" alt="Dear">
+          </a>
+
+          <!-- Luna Nene -->
+          <a href="https://www.vtouch.cf/member/nene" target="_blank" class="carousel-item nene">
+            <img src="https://i.imgur.com/8GUJ5Fo.png" alt="Luna Nene">
+          </a>
+
+          <!-- Zea It -->
+          <a href="https://www.vtouch.cf/member/zea-it" target="_blank" class="carousel-item zea">
+            <img src="https://i.imgur.com/ie8ecSy.png" alt="Zea It">
+          </a>
+
+          <!-- ชุดซ้ำ -->
+          <a href="https://www.vtouch.cf/member/amy-chan" target="_blank" class="carousel-item amy">
+            <img src="https://i.imgur.com/5FG8oXM.png" alt="Amy Chan">
+          </a>
+
+          <a href="https://www.vtouch.cf/member/dear" target="_blank" class="carousel-item dear">
+            <img src="https://i.imgur.com/jtgsqGQ.png" alt="Dear">
+          </a>
+
+          <a href="https://www.vtouch.cf/member/nene" target="_blank" class="carousel-item nene">
+            <img src="https://i.imgur.com/8GUJ5Fo.png" alt="Luna Nene">
+          </a>
+
+          <a href="https://www.vtouch.cf/member/zea-it" target="_blank" class="carousel-item zea">
+            <img src="https://i.imgur.com/ie8ecSy.png" alt="Zea It">
+          </a>
+      </div>
+    </div>
+
+    <style>
+      /* ห่อ carousel ทั้งหมด ปิด scroll และ padding */
+      .carousel-wrapper {
+        overflow: hidden;
+        width: 100%;
+        padding: 40px 0;
+        box-sizing: border-box;
+        scrollbar-width: none;           /* ซ่อน scrollbar สำหรับ Firefox */
+        -ms-overflow-style: none;        /* ซ่อน scrollbar สำหรับ IE */
+      }
+
+      .carousel-wrapper::-webkit-scrollbar {
+        display: none;                   /* ซ่อน scrollbar สำหรับ Chrome/Safari */
+      }
+
+      /* แถบเลื่อนรูป */
+      .carousel-track {
+        display: flex;
+        width: max-content;              /* ขยายตามเนื้อหาทั้งหมด */
+        animation: scroll-seamless 60s linear infinite; /* เลื่อนอัตโนมัติ */
+      }
+
+      /* แต่ละรายการใน carousel */
+      .carousel-item {
+        flex: 0 0 auto;
+        margin: 0 40px;                  /* ระยะห่างระหว่างรูป */
+        background-color: #ffffff;
+      }
+
+      /* การตกแต่งรูป */
+      .carousel-item img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* ขยายภาพเล็กน้อยเมื่อ hover */
+      .carousel-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* เปลี่ยนรูปเมื่อ hover */
+      .carousel-item.amy:hover img {
+        content: url('https://i.imgur.com/4OoEYh1.png');
+      }
+
+      .carousel-item.dear:hover img {
+        content: url('https://i.imgur.com/M1OF3wZ.png');
+      }
+
+      .carousel-item.nene:hover img {
+        content: url('https://i.imgur.com/RFOjFW7.png');
+      }
+
+      .carousel-item.zea:hover img {
+        content: url('https://i.imgur.com/Ftbn9kI.png');
+      }
+
+      /* แอนิเมชันให้เลื่อนรูปอย่างต่อเนื่อง */
+      @keyframes scroll-seamless {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%); /* เลื่อนไปครึ่งนึงของความยาวทั้งหมด */
+        }
+      }
+    </style>
   </div>
 
   <div class="section-left">
@@ -310,7 +453,7 @@
     </p>
     <iframe 
       src="https://discord.com/widget?id=1005918087842910241&theme=dark" 
-      style="width: 100%; height: 100%;" 
+      style="width: 100%; height: 20rem;" 
       allowtransparency="true" 
       frameborder="0" 
       sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
