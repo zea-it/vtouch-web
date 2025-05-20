@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
   <title>Virtual Touching Project</title>
   <style>
     body {
       margin: 0;
       font-family: 'Kanit', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      background: #f9f9f9; /* Secondary light gray background */
+      color: #1c1d20; /* Contrasting dark gray text */
     }
 
     header {
-      background-color: #1e1e2f;
-      color: white;
+      background-color: #ffffff; /* Main white color */
+      color: #1c1d20; /* Contrasting dark gray for text */
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     }
 
     header h1 {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 2rem; /* Increased font size for prominence */
     }
 
     nav a {
-      color: white;
+      color: #1c1d20; /* Contrasting dark gray for links */
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
@@ -36,17 +37,20 @@
 
     nav a:hover {
       text-decoration: underline;
+      color: #333; /* Darker on hover */
     }
 
     .hero {
       text-align: center;
-      padding: 3rem 1rem;
-      background-color: #fff;
+      padding: 4rem 1rem; /* Increased padding for a spacious feel */
+      background-color: #ffffff; /* Main white color */
+      border-bottom: 2px solid #1c1d20; /* Divider for visual separation */
     }
 
     .hero h2 {
-      font-size: 2rem;
+      font-size: 2.5rem; /* Larger heading */
       margin-bottom: 1rem;
+      color: #1c1d20; /* Contrasting dark gray for heading */
     }
 
     .hero p {
@@ -54,6 +58,7 @@
       max-width: 700px;
       margin: auto;
       line-height: 1.8;
+      color: #555; /* Softer gray for body text */
     }
 
     .social-links {
@@ -64,20 +69,23 @@
       margin: 0 0.5rem;
       font-weight: bold;
       cursor: pointer;
+      color: #1c1d20; /* Contrasting dark gray for social links */
     }
 
     .section {
       padding: 2rem;
-      background-color: #fff;
+      background-color: #ffffff; /* Main white color */
       margin-top: 1rem;
+      border-radius: 8px; /* Rounded corners for sections */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     }
 
     .section h3 {
-      color: #1e1e2f;
+      color: #1c1d20; /* Contrasting dark gray for section headings */
     }
 
     .footer {
-      background-color: #1e1e2f;
+      background-color: #1c1d20; /* Contrasting dark gray for footer */
       color: white;
       text-align: center;
       padding: 1rem;
@@ -93,15 +101,17 @@
     }
 
     .menu a {
-      background-color: #1e1e2f;
-      color: white;
+      background-color: #ffffff; /* Main white for menu items */
+      color: #1c1d20; /* Contrasting dark gray for text */
       padding: 0.5rem 1rem;
       border-radius: 8px;
       text-decoration: none;
+      border: 1px solid #1c1d20; /* Border for menu items */
     }
 
     .menu a:hover {
-      background-color: #333;
+      background-color: #1c1d20; /* Dark gray on hover */
+      color: white; /* White text on hover */
     }
 
     @media (max-width: 600px) {
@@ -122,7 +132,8 @@
   <header>
     <h1>Vtouch Project</h1>
     <nav>
-      <a href="#">Main Member</a>
+      <a href="#">Main</a>
+      <a href="#">Member</a>
     </nav>
   </header>
 
@@ -157,14 +168,22 @@
       เรามีแบบฟอร์มให้คุณสามารถส่งคำขอเข้าร่วมเบื้องต้นได้อย่างสะดวก
     </p>
     <p>
-      👉 <a href="https://forms.gle/qq8fTjNadnZ7bzRq5" target="_blank">ส่งคำขอเซ็นสัญญา (ไม่เป็นทางการ)</a><br>
-      👉 <a href="https://forms.gle/dShX2PDr4jvJSv2A9" target="_blank">ส่งคำขอออดิชั่น (ไม่เป็นทางการ)</a>
+      <a href="https://forms.gle/qq8fTjNadnZ7bzRq5" target="_blank">ส่งคำขอเซ็นสัญญา (ไม่เป็นทางการ)</a><br>
+      <a href="https://forms.gle/dShX2PDr4jvJSv2A9" target="_blank">ส่งคำขอออดิชั่น (ไม่เป็นทางการ)</a>
     </p>
   </div>
 
-  <div class="menu">
-    <a href="#">Main</a>
-    <a href="#">Commissions</a>
-    <a href="#">Rules</a>
-    <a href="#">Audition</a>
-    <a href="#">
+  <div class="footer">
+    © 2022 Virtual Touching Project. | vtouch.service@mail.com
+    <div class="menu">
+      <a href="#">Main</a>
+      <a href="#">Commissions</a>
+      <a href="#">Rules</a>
+      <a href="#">Audition</a>
+      <a href="#">Signing</a>
+      <a href="#">About Us</a>
+    </div>
+  </div>
+
+</body>
+</html>
