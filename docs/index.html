@@ -73,21 +73,34 @@
     }
 
     .hero {
-      text-align: center;
-      padding: 4rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      height: 100vh;
       width: 100%;
+
+      text-align: center;
+      padding: 4rem 1rem; /* รองรับมือถือเล็ก ๆ */
       margin: 0;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://new.vtouch.cf/image/Logo Fix Full.png');
+
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://new.vtouch.cf/image/Logo Fix Full.png');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       color: white;
+
+      box-sizing: border-box;
+      padding-top: calc(4rem + 3.5rem); /* ปรับให้เผื่อ header สูงประมาณ 3.5rem */
     }
 
     .hero h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: white;
-      font-weight: 700;
+      font-weight: 500;
     }
 
     .hero p {
@@ -426,7 +439,6 @@
       .carousel-item {
         flex: 0 0 auto;
         margin: 0 40px;                  /* ระยะห่างระหว่างรูป */
-        background-color: #ffffff;
       }
 
       /* การตกแต่งรูป */
@@ -437,6 +449,7 @@
         border-radius: 20px;
         transition: transform 0.3s ease;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        background-color: #ffffff;
       }
 
       /* ขยายภาพเล็กน้อยเมื่อ hover */
