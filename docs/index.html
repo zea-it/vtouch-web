@@ -60,165 +60,169 @@
     </nav>
   </header>
 
-  <div class="hero">
-    <h2>Virtual Touching Project</h2>
-    <p>สวัสดีทุกท่าน
-      <br>
-      พวกเรา ทางทีมงานของ Vtouch Project จะพยายามทำให้ดีที่สุด และจะไม่ทำให้ทุกคนผิดหวังอย่างแน่นอน<br>
-      <em>We'll touch the stars</em>
-      <br><br>
-      เอกลักษณ์สังกัด : ให้ความอิสระแก่ Vtuber
-    </p>
+  <main class="main-content">
 
-    <div class="social-links">
-      <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
-      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-    </div>
-  </div>
-
-  <div class="section-center">
-    <h3>Virtual Touching Project คืออะไร?</h3>
-    <p>
-      Virtual Touching Project คือกลุ่มของ ทาเล้นท์ และผู้สร้างคอนเทนต์ที่มารวมตัวกันเพื่อถ่ายทอดความรู้สึกผ่านการไลฟ์สตรีม
-      ที่นี่เป็นพื้นที่สำหรับการเชื่อมต่อระหว่างผู้ชมกับ VTuber ผ่านอารมณ์ ความคิด และเรื่องราวที่อยากแบ่งปัน
-      เราหวังว่าคุณจะได้พบกับทาเล้นท์ที่คุณชื่นชอบ และร่วมเป็นส่วนหนึ่งของช่วงเวลาที่มีความหมายไปด้วยกัน
-    </p>
-  </div>
-
-  <div class="image-slide">
-    <div class="carousel-wrapper">
-      <div class="carousel-track">
-          <!-- Amy Chan -->
-          <a href="https://www.vtouch.cf/member/amy-chan" target="_blank" class="carousel-item amy">
-            <img src="https://i.imgur.com/5FG8oXM.png" alt="Amy Chan">
-          </a>
-
-          <!-- Dear -->
-          <a href="https://www.vtouch.cf/member/dear" target="_blank" class="carousel-item dear">
-            <img src="https://i.imgur.com/jtgsqGQ.png" alt="Dear">
-          </a>
-
-          <!-- Luna Nene -->
-          <a href="https://www.vtouch.cf/member/nene" target="_blank" class="carousel-item nene">
-            <img src="https://i.imgur.com/8GUJ5Fo.png" alt="Luna Nene">
-          </a>
-
-          <!-- Zea It -->
-          <a href="https://www.vtouch.cf/member/zea-it" target="_blank" class="carousel-item zea">
-            <img src="https://i.imgur.com/ie8ecSy.png" alt="Zea It">
-          </a>
-
-          <!-- ชุดซ้ำ -->
-          <a href="https://www.vtouch.cf/member/amy-chan" target="_blank" class="carousel-item amy">
-            <img src="https://i.imgur.com/5FG8oXM.png" alt="Amy Chan">
-          </a>
-
-          <a href="https://www.vtouch.cf/member/dear" target="_blank" class="carousel-item dear">
-            <img src="https://i.imgur.com/jtgsqGQ.png" alt="Dear">
-          </a>
-
-          <a href="https://www.vtouch.cf/member/nene" target="_blank" class="carousel-item nene">
-            <img src="https://i.imgur.com/8GUJ5Fo.png" alt="Luna Nene">
-          </a>
-
-          <a href="https://www.vtouch.cf/member/zea-it" target="_blank" class="carousel-item zea">
-            <img src="https://i.imgur.com/ie8ecSy.png" alt="Zea It">
-          </a>
+    <div class="hero">
+      <h2>Virtual Touching Project</h2>
+      <p>สวัสดีทุกท่าน
+        <br>
+        พวกเรา ทางทีมงานของ Vtouch Project จะพยายามทำให้ดีที่สุด และจะไม่ทำให้ทุกคนผิดหวังอย่างแน่นอน<br>
+        <em>We'll touch the stars</em>
+        <br><br>
+        เอกลักษณ์สังกัด : ให้ความอิสระแก่ Vtuber
+      </p>
+  
+      <div class="social-links">
+        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
-
-    <style>
-      /* ห่อ carousel ทั้งหมด ปิด scroll และ padding */
-      .carousel-wrapper {
-        overflow: hidden;
-        width: 100%;
-        padding: 40px 0;
-        box-sizing: border-box;
-        scrollbar-width: none;           /* ซ่อน scrollbar สำหรับ Firefox */
-        -ms-overflow-style: none;        /* ซ่อน scrollbar สำหรับ IE */
-      }
-
-      .carousel-wrapper::-webkit-scrollbar {
-        display: none;                   /* ซ่อน scrollbar สำหรับ Chrome/Safari */
-      }
-
-      /* แถบเลื่อนรูป */
-      .carousel-track {
-        display: flex;
-        width: max-content;              /* ขยายตามเนื้อหาทั้งหมด */
-        animation: scroll-seamless 60s linear infinite; /* เลื่อนอัตโนมัติ */
-      }
-
-      /* แต่ละรายการใน carousel */
-      .carousel-item {
-        flex: 0 0 auto;
-        margin: 0 40px;                  /* ระยะห่างระหว่างรูป */
-      }
-
-      /* การตกแต่งรูป */
-      .carousel-item img {
-        width: 300px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 20px;
-        transition: transform 0.3s ease;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        background-color: #ffffff;
-      }
-
-      /* ขยายภาพเล็กน้อยเมื่อ hover */
-      .carousel-item:hover img {
-        transform: scale(1.05);
-      }
-
-      /* เปลี่ยนรูปเมื่อ hover */
-      .carousel-item.amy:hover img {
-        content: url('https://i.imgur.com/4OoEYh1.png');
-      }
-
-      .carousel-item.dear:hover img {
-        content: url('https://i.imgur.com/M1OF3wZ.png');
-      }
-
-      .carousel-item.nene:hover img {
-        content: url('https://i.imgur.com/RFOjFW7.png');
-      }
-
-      .carousel-item.zea:hover img {
-        content: url('https://i.imgur.com/Ftbn9kI.png');
-      }
-      
-      @keyframes scroll-seamless {
-        0% {
-          transform: translateX(0);
+  
+    <div class="section-center">
+      <h3>Virtual Touching Project คืออะไร?</h3>
+      <p>
+        Virtual Touching Project คือกลุ่มของ ทาเล้นท์ และผู้สร้างคอนเทนต์ที่มารวมตัวกันเพื่อถ่ายทอดความรู้สึกผ่านการไลฟ์สตรีม
+        ที่นี่เป็นพื้นที่สำหรับการเชื่อมต่อระหว่างผู้ชมกับ VTuber ผ่านอารมณ์ ความคิด และเรื่องราวที่อยากแบ่งปัน
+        เราหวังว่าคุณจะได้พบกับทาเล้นท์ที่คุณชื่นชอบ และร่วมเป็นส่วนหนึ่งของช่วงเวลาที่มีความหมายไปด้วยกัน
+      </p>
+    </div>
+  
+    <div class="image-slide">
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+            <!-- Amy Chan -->
+            <a href="https://www.vtouch.cf/member/amy-chan" target="_blank" class="carousel-item amy">
+              <img src="https://i.imgur.com/5FG8oXM.png" alt="Amy Chan">
+            </a>
+  
+            <!-- Dear -->
+            <a href="https://www.vtouch.cf/member/dear" target="_blank" class="carousel-item dear">
+              <img src="https://i.imgur.com/jtgsqGQ.png" alt="Dear">
+            </a>
+  
+            <!-- Luna Nene -->
+            <a href="https://www.vtouch.cf/member/nene" target="_blank" class="carousel-item nene">
+              <img src="https://i.imgur.com/8GUJ5Fo.png" alt="Luna Nene">
+            </a>
+  
+            <!-- Zea It -->
+            <a href="https://www.vtouch.cf/member/zea-it" target="_blank" class="carousel-item zea">
+              <img src="https://i.imgur.com/ie8ecSy.png" alt="Zea It">
+            </a>
+  
+            <!-- ชุดซ้ำ -->
+            <a href="https://www.vtouch.cf/member/amy-chan" target="_blank" class="carousel-item amy">
+              <img src="https://i.imgur.com/5FG8oXM.png" alt="Amy Chan">
+            </a>
+  
+            <a href="https://www.vtouch.cf/member/dear" target="_blank" class="carousel-item dear">
+              <img src="https://i.imgur.com/jtgsqGQ.png" alt="Dear">
+            </a>
+  
+            <a href="https://www.vtouch.cf/member/nene" target="_blank" class="carousel-item nene">
+              <img src="https://i.imgur.com/8GUJ5Fo.png" alt="Luna Nene">
+            </a>
+  
+            <a href="https://www.vtouch.cf/member/zea-it" target="_blank" class="carousel-item zea">
+              <img src="https://i.imgur.com/ie8ecSy.png" alt="Zea It">
+            </a>
+        </div>
+      </div>
+  
+      <style>
+        /* ห่อ carousel ทั้งหมด ปิด scroll และ padding */
+        .carousel-wrapper {
+          overflow: hidden;
+          width: 100%;
+          padding: 40px 0;
+          box-sizing: border-box;
+          scrollbar-width: none;           /* ซ่อน scrollbar สำหรับ Firefox */
+          -ms-overflow-style: none;        /* ซ่อน scrollbar สำหรับ IE */
         }
-        100% {
-          transform: translateX(-50%);
+  
+        .carousel-wrapper::-webkit-scrollbar {
+          display: none;                   /* ซ่อน scrollbar สำหรับ Chrome/Safari */
         }
-      }
-    </style>
-  </div>
+  
+        /* แถบเลื่อนรูป */
+        .carousel-track {
+          display: flex;
+          width: max-content;              /* ขยายตามเนื้อหาทั้งหมด */
+          animation: scroll-seamless 60s linear infinite; /* เลื่อนอัตโนมัติ */
+        }
+  
+        /* แต่ละรายการใน carousel */
+        .carousel-item {
+          flex: 0 0 auto;
+          margin: 0 40px;                  /* ระยะห่างระหว่างรูป */
+        }
+  
+        /* การตกแต่งรูป */
+        .carousel-item img {
+          width: 300px;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 20px;
+          transition: transform 0.3s ease;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+          background-color: #ffffff;
+        }
+  
+        /* ขยายภาพเล็กน้อยเมื่อ hover */
+        .carousel-item:hover img {
+          transform: scale(1.05);
+        }
+  
+        /* เปลี่ยนรูปเมื่อ hover */
+        .carousel-item.amy:hover img {
+          content: url('https://i.imgur.com/4OoEYh1.png');
+        }
+  
+        .carousel-item.dear:hover img {
+          content: url('https://i.imgur.com/M1OF3wZ.png');
+        }
+  
+        .carousel-item.nene:hover img {
+          content: url('https://i.imgur.com/RFOjFW7.png');
+        }
+  
+        .carousel-item.zea:hover img {
+          content: url('https://i.imgur.com/Ftbn9kI.png');
+        }
+        
+        @keyframes scroll-seamless {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      </style>
+    </div>
+  
+    <div class="section-left">
+      <h3>สำหรับผู้ที่สนใจเข้าร่วมกับเรา</h3>
+      <p>
+        หากคุณสนใจเป็นส่วนหนึ่งของ Virtual Touching Project ไม่ว่าจะในฐานะ ทาเล้นท์ หรือ VTuber
+        เรามีแบบฟอร์มให้คุณสามารถส่งคำขอเข้าร่วมเบื้องต้นได้อย่างสะดวก
+      </p>
+      <p>
+        <a href="https://forms.gle/qq8fTjNadnZ7bzRq5" target="_blank">ส่งคำขอเซ็นสัญญา (ไม่เป็นทางการ)</a><br>
+        <a href="https://forms.gle/dShX2PDr4jvJSv2A9" target="_blank">ส่งคำขอออดิชั่น (ไม่เป็นทางการ)</a>
+      </p>
+      <iframe 
+        src="https://discord.com/widget?id=1005918087842910241&theme=dark" 
+        style="width: 100%; height: 20rem;" 
+        allowtransparency="true" 
+        frameborder="0" 
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+      </iframe>
+    </div>
 
-  <div class="section-left">
-    <h3>สำหรับผู้ที่สนใจเข้าร่วมกับเรา</h3>
-    <p>
-      หากคุณสนใจเป็นส่วนหนึ่งของ Virtual Touching Project ไม่ว่าจะในฐานะ ทาเล้นท์ หรือ VTuber
-      เรามีแบบฟอร์มให้คุณสามารถส่งคำขอเข้าร่วมเบื้องต้นได้อย่างสะดวก
-    </p>
-    <p>
-      <a href="https://forms.gle/qq8fTjNadnZ7bzRq5" target="_blank">ส่งคำขอเซ็นสัญญา (ไม่เป็นทางการ)</a><br>
-      <a href="https://forms.gle/dShX2PDr4jvJSv2A9" target="_blank">ส่งคำขอออดิชั่น (ไม่เป็นทางการ)</a>
-    </p>
-    <iframe 
-      src="https://discord.com/widget?id=1005918087842910241&theme=dark" 
-      style="width: 100%; height: 20rem;" 
-      allowtransparency="true" 
-      frameborder="0" 
-      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-    </iframe>
-  </div>
+  </main>
 
   <div class="footer">
     <div class="footer-top">
