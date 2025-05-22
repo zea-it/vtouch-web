@@ -135,11 +135,19 @@ nav.scrolled a:hover {
   color: #494949;
 }
 
-.section-center,
-.section-left {
+.section-center{
   padding: 2rem 2rem;
   background-color: #ffffff;
   width: 90%;
+  max-width: none;
+  margin: 0 auto;
+  box-shadow: none;
+  border-radius: 0;
+}
+.section-left {
+  padding: 2rem 2rem;
+  background-color: #ffffff;
+  width: 100%;
   max-width: none;
   margin: 0 auto;
   box-shadow: none;
