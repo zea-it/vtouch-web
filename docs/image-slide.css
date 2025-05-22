@@ -1,0 +1,63 @@
+
+                .carousel-wrapper {
+                  overflow: hidden;
+                  width: 100%;
+                  padding: 40px 0;
+                  box-sizing: border-box;
+                  scrollbar-width: none;       
+                  -ms-overflow-style: none;   
+                }
+          
+                .carousel-wrapper::-webkit-scrollbar {
+                  display: none;                 
+                }
+          
+                .carousel-track {
+                  display: flex;
+                  width: max-content;           
+                  animation: scroll-seamless 60s linear infinite; 
+                }
+          
+                .carousel-item {
+                  flex: 0 0 auto;
+                  margin: 0 40px;                
+                }
+          
+                .carousel-item img {
+                  width: 300px;
+                  height: 300px;
+                  object-fit: cover;
+                  border-radius: 20px;
+                  transition: transform 0.3s ease;
+                  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                  background-color: #ffffff;
+                }
+          
+                .carousel-item:hover img {
+                  transform: scale(1.05);
+                }
+          
+                .carousel-item.amy:hover img {
+                  content: url('https://i.imgur.com/4OoEYh1.png');
+                }
+          
+                .carousel-item.dear:hover img {
+                  content: url('https://i.imgur.com/M1OF3wZ.png');
+                }
+          
+                .carousel-item.nene:hover img {
+                  content: url('https://i.imgur.com/RFOjFW7.png');
+                }
+          
+                .carousel-item.zea:hover img {
+                  content: url('https://i.imgur.com/Ftbn9kI.png');
+                }
+                
+                @keyframes scroll-seamless {
+                  0% {
+                    transform: translateX(0);
+                  }
+                  100% {
+                    transform: translateX(-50%);
+                  }
+                }
