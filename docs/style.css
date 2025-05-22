@@ -1,282 +1,295 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
 
-    html, body {
-      margin: 0;
-      font-family: 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background: #f9f9f9;
-      color: #1c1d20;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      line-height: 1.6;
-    }
+html, body {
+  margin: 0;
+  font-family: 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #ffffff;
+  color: #1c1d20;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background-color: #101113;
-      transition: background-color 0.3s, box-shadow 0.3 ease;
-      color: #ffffff;
-      padding: 0.3rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #101113;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+  color: #ffffff;
+  padding: 0.3rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    header.scrolled {
-      background-color: #1c1d2000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
-    }
+header.scrolled {
+  background-color: rgba(0, 0, 0, 0);;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+  color: #1c1d20;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 1.2rem;
-      font-weight: 400;
-    }
+header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
-    .logo {
-      height: 2.4rem;
-      width: auto;
-    }
+.logo {
+  height: 2.4rem;
+  width: auto;
+  transition: opacity 0.5s ease;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0rem 2rem;
-      gap: 1.5rem;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 2rem;
+  gap: 1.5rem;
+}
 
-    nav a {
-      color: #ffffff;
-      margin: 0 0.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 1s ease;
+}
 
-    nav a:hover {
-      color: #3a3a3a;
-    }
+nav a:hover {
+  color: #3a3a3a;
+}
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+nav.scrolled a {
+  color: #1c1d20;
+}
 
-      height: 100vh;
-      width: 100%;
+nav.scrolled a:hover {
+  color: #494949;
+}
 
-      text-align: center;
-      padding: 4rem 1rem;
-      margin: 0;
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('https://new.vtouch.cf/image/Logo Fix Full.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
+  height: 100vh;
+  width: 100%;
 
-      box-sizing: border-box;
-      padding-top: calc(4rem + 3.5rem);
-    }
+  text-align: center;
+  padding: 4rem 1rem;
+  margin: 0;
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: white;
-      font-weight: 500;
-    }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                    url('https://new.vtouch.cf/image/Logo Fix Full.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
 
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 70%;
-      margin: auto;
-      line-height: 1.8;
-      color: #f0f0f0;
-    }
+  box-sizing: border-box;
+  padding-top: calc(4rem + 3.5rem);
+}
 
-    .social-links {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: white;
+}
 
-    .social-links a {
-      color: #ffffff;
-      font-size: 1.8rem;
-      transition: color 0.3s ease;
-    }
+.hero p {
+  font-size: 1.2rem;
+  max-width: 70%;
+  margin: auto;
+  line-height: 1.8;
+  color: #f0f0f0;
+}
 
-    .social-links a:hover {
-      color: #494949;
-    }
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
 
-    .section-center {
-      padding: 2rem;
-      background-color: #ffffff;
-      margin-top: 1rem;
-      margin-left: 1rem;
-      margin-right: 1rem;
-      padding-left: 15%;
-      padding-right: 15%;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
+.social-links a {
+  color: #ffffff;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
 
-    .section-center h3 {
-      color: #1c1d20;
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
+.social-links a:hover {
+  color: #494949;
+}
 
-    .section-center p {
-      font-size: 1.2rem;
-    }
+.section-center,
+.section-left {
+  padding: 2rem 2rem;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  box-shadow: none;
+  border-radius: 0;
+}
 
-    .section-left {
-      padding: 2rem;
-      background-color: #ffffff;
-      margin-top: 1rem;
-      margin-left: 1rem;
-      margin-right: 1rem;
-      padding-left: 15%;
-      padding-right: 15%;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      text-align: left;
-    }
+.section-center {
+  text-align: center;
+}
 
-    .section-left h3 {
-      color: #1c1d20;
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
+.section-left {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
 
-    .section-left p {
-      font-size: 1.2rem;
-    }
+.left-content,
+.discord-embed {
+  flex: 1 1 45%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
 
-    .footer {
-      background-color: #1c1d20;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 2rem;
-      font-size: 0.95rem;
-    }
+.section-center h3,
+.section-left h3 {
+  color: #1c1d20;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
 
-    .footer a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+.section-center p,
+.section-left p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
 
-    .footer a:hover {
-      color: #bbbbbb;
-    }
+.footer {
+  background-color: #1c1d20;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
 
-    .footer-top p {
-      margin: 0 0 1rem;
-      font-size: 1rem;
-    }
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-    .footer-top a {
-      color: #66ccff;
-      text-decoration: none;
-    }
+.footer a:hover {
+  color: #bbbbbb;
+}
 
-    .footer-top a:hover {
-      text-decoration: underline;
-    }
+.footer-top p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+}
 
-    .footer-menu {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
+.footer-top a {
+  color: #66ccff;
+  text-decoration: none;
+}
 
-    .footer-menu a {
-      background-color: transparent;
-      padding: 0.3rem 0.8rem;
-      border: 1px solid #ffffff33;
-      border-radius: 5px;
-      font-size: 0.9rem;
-    }
+.footer-top a:hover {
+  text-decoration: underline;
+}
 
-    .footer-menu a:hover {
-      background-color: #ffffff22;
-    }
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
 
-    .menu {
-      display: flex;
-      justify-content: center;
-      margin-top: 1rem;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+.footer-menu a {
+  background-color: transparent;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid #ffffff33;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
 
-    .menu a {
-      background-color: #ffffff;
-      color: #1c1d20;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      border: 1px solid #1c1d20;
-      font-weight: 600;
-    }
+.footer-menu a:hover {
+  background-color: #ffffff22;
+}
 
-    .menu a:hover {
-      background-color: #1c1d20;
-      color: white;
-    }
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+.menu a {
+  background-color: #ffffff;
+  color: #1c1d20;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #1c1d20;
+  font-weight: 600;
+}
 
-      .menu {
-        flex-direction: column;
-        align-items: center;
-      }
+.menu a:hover {
+  background-color: #1c1d20;
+  color: white;
+}
 
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1rem;
-        }
+.text-link {
+  color: #66ccff;
+}
 
-        nav {
-          width: 100%;
-          display: flex;
-          justify-content: flex-start;
-          gap: 1rem;
-          flex-wrap: wrap;
-        }
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-        .logo-container {
-          justify-content: flex-start;
-        }
-      }
-    }
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .logo-container {
+    justify-content: flex-start;
+  }
+}
