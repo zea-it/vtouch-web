@@ -63,5 +63,5 @@ notifications.forEach((data, i) => {
 
         // auto remove
         const autoRemove = setTimeout(() => box.remove(), 10000);
-    }, i * 1000); // เว้น 1 วินาทีต่อแจ้งเตือน
+    }, i * 2000); // เว้น 1 วินาทีต่อแจ้งเตือน
 });
