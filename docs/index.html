@@ -229,6 +229,13 @@
             document.getElementById('prev-btn').disabled = (index === 0);
             document.getElementById('next-btn').disabled = (index === vtubers.length - 1);
           }
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft' && current > 0) {
+            showVtuber(current - 1);
+          } else if (e.key === 'ArrowRight' && current < vtubers.length - 1) {
+            showVtuber(current + 1);
+          }
+        });
         </script>
 
         <div class="section-left">
