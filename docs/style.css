@@ -278,6 +278,90 @@ nav.scrolled a:hover {
 }
 #scrollTopBtn:hover { background: #ffffff; color: #222; }
 
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 2rem;
+    padding: 3rem 2vw;
+    box-sizing: border-box;
+}
+
+.story-content {
+    flex: 8;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px #0001;
+    padding: 2.5rem 2rem;
+    min-width: 0;
+    max-width: 900px;
+    transition: all 0.3s;
+}
+
+.story-content h2 {
+    margin-top: 0;
+    font-size: 2.3rem;
+    color: #12a3e0;
+    font-weight: 700;
+}
+
+.story-content p {
+    font-size: 1.25rem;
+    line-height: 2;
+    margin-bottom: 1.2rem;
+}
+
+.model-col {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 180px;
+    max-width: 300px;
+}
+
+.model-image {
+    width: 100%;
+    max-width: 210px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px #0002;
+    background: #fff;
+    margin-bottom: 2rem;
+    object-fit: contain;
+}
+
+.nav-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0 0 0;
+}
+
+.nav-btns button {
+    background: #12a3e0;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.nav-btns button:disabled {
+    background: #bbb;
+    cursor: not-allowed;
+}
+
+.nav-btns button:hover:enabled {
+    background: #0b7cb5;
+}
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
