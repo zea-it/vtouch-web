@@ -280,13 +280,16 @@ nav.scrolled a:hover {
 
 
 .container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    min-height: 100vh;
-    gap: 2rem;
-    padding: 3rem 2vw;
-    box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 2rem;
+  padding: 3rem 2vw;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px; /* กำหนดขนาดสูงสุด */
+  margin: 0 auto; /* จัดตรงกลางแนวนอน */
 }
 
 .story-content {
