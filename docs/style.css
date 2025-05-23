@@ -276,7 +276,7 @@ nav.scrolled a:hover {
   font-size: 1.4rem; cursor: pointer; box-shadow: 0 2px 8px #0001;
   transition: background 0.2s;
 }
-#scrollTopBtn:hover { background: #66ccff; color: #222; }
+#scrollTopBtn:hover { background: #ffffff; color: #222; }
 
 @media (max-width: 600px) {
   header {
