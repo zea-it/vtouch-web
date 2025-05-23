@@ -274,6 +274,19 @@
     </div>
 
     <button id="scrollTopBtn" title="กลับขึ้นบน"><i class="fas fa-arrow-up"></i></button>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const btn = document.getElementById('scrollTopBtn');
+    
+      window.onscroll = function() {
+        btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+      };
+    
+      btn.onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      };
+    });
+    </script>
     
 </body>
 
