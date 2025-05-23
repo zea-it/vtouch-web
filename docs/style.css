@@ -270,6 +270,14 @@ nav.scrolled a:hover {
   color: #66ccff;
 }
 
+#scrollTopBtn {
+    display: none; position: fixed; bottom: 40px; right: 40px; z-index: 999;
+    background: #222; color: #fff; border: none; border-radius: 50%; width: 44px; height: 44px;
+    font-size: 1.4rem; cursor: pointer; box-shadow: 0 2px 8px #0001;
+    transition: background 0.2s;
+  }
+  #scrollTopBtn:hover { background: #66ccff; color: #222; }
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -300,12 +308,4 @@ nav.scrolled a:hover {
   .logo-container {
     justify-content: flex-start;
   }
-
-  #scrollTopBtn {
-    display: none; position: fixed; bottom: 40px; right: 40px; z-index: 999;
-    background: #222; color: #fff; border: none; border-radius: 50%; width: 44px; height: 44px;
-    font-size: 1.4rem; cursor: pointer; box-shadow: 0 2px 8px #0001;
-    transition: background 0.2s;
-  }
-  #scrollTopBtn:hover { background: #66ccff; color: #222; }
 }
