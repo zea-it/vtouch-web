@@ -2,7 +2,7 @@ window.addEventListener('scroll', function () {
   const header = document.querySelector('header');
   const nav = document.querySelector('nav');
   const logoImg = document.getElementById('logo-img');
-  const isScrolled = window.scrollY > 700;
+  const isScrolled = window.scrollY > 750;
 
   header.classList.toggle('scrolled', isScrolled);
   nav.classList.toggle('scrolled', isScrolled);
