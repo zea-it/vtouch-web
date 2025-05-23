@@ -23,3 +23,12 @@ window.addEventListener('scroll', function () {
     }, 200);
   }
 });
+
+window.onscroll = function() {
+  document.getElementById('scrollTopBtn').style.display = 
+    (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+};
+document.getElementById('scrollTopBtn').onclick = function() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
