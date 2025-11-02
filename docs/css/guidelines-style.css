@@ -12,7 +12,7 @@
 body {
     background-color: var(--bts-background-light);
     color: var(--bts-text-dark);
-    padding-top: 60px; /* เว้นที่ให้ header */
+    padding-top: 50px; /* เว้นที่ให้ header */
 }
 
 main {
@@ -201,4 +201,5 @@ main {
     .content-block h3 { font-size: 1.2em; }
     .cta-buttons { display: flex; flex-direction: column; gap: 15px; }
     .cta-buttons a { width: 90%; margin: 0 auto; text-align: center; }
+
 }
