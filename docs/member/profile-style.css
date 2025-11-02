@@ -1,0 +1,549 @@
+/* --- 
+  ไฟล์นี้เป็น Template หลักสำหรับหน้าโปรไฟล์สมาชิก
+  มันรวม Layout ที่ทุกคนใช้ร่วมกัน
+  และ Theme สีของแต่ละคน (เช่น .theme-amy, .theme-dear)
+--- */
+
+:root {
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --border-color: #e0e0e0;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+  padding: 0; 
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: 60px; 
+}
+
+/* === START: แก้ไข Layout === */
+.vtuber-container {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-background);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  overflow: hidden;
+  max-width: 1200px; /* ขยายความกว้างสูงสุดสำหรับ 3 คอลัมน์ */
+  width: 90%; 
+  margin: 40px auto; 
+}
+
+.vtuber-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+/* ... (โค้ด .vtuber-header h1, p, .logo ไม่เปลี่ยนแปลง) ... */
+.vtuber-header .logo {
+  max-height: 100px;
+  height: 100px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.vtuber-header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  font-weight: 700;
+  color: var(--header-text, white); 
+}
+
+.vtuber-header p {
+  font-size: 1.1em;
+  margin: 5px 0 0;
+  opacity: 0.9;
+  color: var(--header-text, white); 
+}
+
+
+.vtuber-content {
+  display: flex;
+  flex-wrap: wrap; 
+  padding: 30px;
+  padding-bottom: 0; /* --- ลบ padding-bottom ออก --- */
+  gap: 30px; 
+}
+
+/* ลบ .vtuber-main-column ออก */
+
+/* คอลัมน์ 1: รูปภาพ */
+.vtuber-profile-image {
+    flex: 1 1 300px; /* ให้ยืดได้ แต่พื้นฐาน 300px */
+    min-width: 280px;
+    display: flex;
+    align-items: flex-start; /* เปลี่ยนเป็น flex-start */
+    justify-content: center;
+}
+
+.vtuber-profile-image img {
+    width: 100%;
+    max-width: 350px; 
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+/* คอลัมน์ 2: ข้อมูล */
+.vtuber-info {
+    flex: 2 1 400px; /* ให้กว้างเป็น 2 เท่าของคอลัมน์อื่น */
+    min-width: 300px; 
+}
+
+.vtuber-info h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+/* ... (โค้ด .vtuber-info p, p b ไม่เปลี่ยนแปลง) ... */
+.vtuber-info p {
+    margin: 8px 0;
+    line-height: 1.8;
+    font-size: 1.05em;
+    color: var(--text-dark);
+}
+
+.vtuber-info p b {
+    color: var(--primary-color);
+    min-width: 100px; 
+    display: inline-block;
+}
+
+
+/* คอลัมน์ 3: Sidebar */
+.vtuber-sidebar {
+    flex: 1 1 280px; /* ให้ยืดได้ แต่พื้นฐาน 280px */
+    background-color: var(--sidebar-bg, var(--background-light));
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+    min-width: 250px; 
+    height: fit-content; 
+}
+
+.vtuber-section {
+    margin-bottom: 25px;
+}
+/* ... (โค้ด .vtuber-section h4, .vtuber-tags, .vtuber-links ไม่เปลี่ยนแปลง) ... */
+.vtuber-section:last-child {
+    margin-bottom: 0;
+}
+
+.vtuber-section h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.3em;
+    margin-top: 0; 
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--secondary-color);
+    padding-bottom: 5px;
+}
+
+.vtuber-tags p {
+    font-size: 1em;
+    margin: 6px 0;
+    color: var(--text-light);
+}
+
+.vtuber-tags p b {
+    color: var(--primary-color);
+}
+
+.vtuber-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vtuber-links a i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.vtuber-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.1);
+}
+
+
+/* === START: แก้ไข CSS ส่วน Bio === */
+/* ส่วน Bio (ย้ายออกมาอยู่นอก .vtuber-content) */
+.vtuber-bio {
+    padding: 30px; /* เพิ่ม padding กลับเข้ามา */
+    border-top: 0px solid var(--border-color); /* เพิ่มเส้นคั่น */
+}
+
+.vtuber-bio h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-top: 0; /* ลบ margin-top ที่อาจติดมา */
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+}
+/* === END: แก้ไข CSS ส่วน Bio === */
+
+.vtuber-bio p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.graduated-badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 12px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+
+/* === END: แก้ไข Layout === */
+
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 992px) {
+    /* เมื่อจอน้อยกว่า 992px, 3 คอลัมน์จะยุบ */
+    .vtuber-content {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30px; /* คืน padding-bottom ในจอมือถือ */
+    }
+    
+    .vtuber-profile-image {
+        width: 70%; 
+        max-width: 300px; 
+    }
+
+    .vtuber-info {
+        width: 100%;
+        text-align: center;
+    }
+    /* ... (โค้ด Responsive ที่เหลือไม่เปลี่ยนแปลง) ... */
+    .vtuber-info h2 {
+        text-align: center;
+    }
+
+    .vtuber-info p {
+        text-align: left; 
+        display: flex; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+    }
+
+    .vtuber-info p b {
+        flex-basis: 30%; 
+        text-align: right; 
+        padding-right: 10px; 
+    }
+
+    .vtuber-info p span {
+        flex-basis: 60%; 
+        text-align: left; 
+    }
+
+    .vtuber-sidebar {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    /* --- Responsive Bio --- */
+    .vtuber-bio {
+        padding-top: 30px;
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+@media (max-width: 576px) {
+    /* ... (โค้ด Responsive ที่เหลือไม่เปลี่ยนแปลง) ... */
+    .vtuber-container {
+        border-radius: 15px;
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .vtuber-header {
+        padding: 20px 15px;
+    }
+
+    .vtuber-header h1 {
+        font-size: 2em;
+    }
+
+    .vtuber-header .logo {
+        max-height: 80px;
+    }
+
+    .vtuber-content {
+        padding: 20px;
+        gap: 20px;
+        padding-bottom: 20px; /* คืน padding-bottom ในจอมือถือ */
+    }
+
+    .vtuber-profile-image {
+        width: 90%;
+    }
+
+    .vtuber-info h2 {
+        font-size: 1.8em;
+    }
+
+    .vtuber-info p {
+        font-size: 0.95em;
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .vtuber-info p b,
+    .vtuber-info p span {
+        flex-basis: auto;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .vtuber-sidebar {
+        padding: 20px;
+    }
+
+    .vtuber-links a {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+    
+    .vtuber-bio {
+        padding: 20px;
+        padding-top: 30px;
+    }
+}
+
+/* ------------------------------------------ */
+/* THEMES (อัปเดต: เพิ่ม Header & Footer)      */
+/* ------------------------------------------ */
+
+/* --- Theme: Amy Chan (Default) --- */
+.theme-amy {
+    --primary-color: #7a86b8; 
+    --secondary-color: #a8b0d4; 
+    --background-light: #f8f9fa;
+    --text-dark: #343a40;
+    --text-light: #6c757d;
+    --card-background: #ffffff;
+    --header-text: #ffffff;
+    --sidebar-bg: #f8f9fa;
+}
+/* === เพิ่ม: Theming Bar === */
+.theme-amy header {
+    background-color: var(--secondary-color);
+}
+.theme-amy header.scrolled {
+    background-color: rgba(248, 249, 250, 0.8); /* สีพื้นหลังเว็บ */
+    color: var(--text-dark);
+}
+.theme-amy header.scrolled .menu-toggle {
+    color: var(--text-dark);
+}
+.theme-amy nav#main-nav.active {
+    background-color: var(--secondary-color);
+}
+.theme-amy .footer {
+    background-color: var(--primary-color);
+}
+/* === จบ: Theming Bar === */
+
+
+/* --- Theme: Dear --- */
+.theme-dear {
+    --primary-color: #ddac4e; 
+    --secondary-color: #fef3d4; 
+    --background-light: #fdfdfd; 
+    --text-dark: #333;
+    --text-light: #6c757d;
+    --card-background: #ffffff;
+    --header-text: #b95d36; 
+    --border-color: #f1e0a1; 
+    --sidebar-bg: #fdfdfd;
+}
+/* === เพิ่ม: Theming Bar === */
+.theme-dear header {
+    background-color: var(--primary-color);
+    color: var(--header-text);
+}
+.theme-dear header .menu-toggle {
+    color: var(--header-text);
+}
+.theme-dear header.scrolled {
+    background-color: rgba(253, 253, 253, 0.8);
+    color: var(--header-text);
+}
+.theme-dear header.scrolled .menu-toggle {
+    color: var(--header-text);
+}
+.theme-dear nav#main-nav.active {
+    background-color: var(--primary-color);
+}
+.theme-dear .footer {
+    background-color: var(--primary-color);
+    color: var(--header-text);
+}
+.theme-dear .footer a { color: var(--header-text); }
+/* === จบ: Theming Bar === */
+
+/* ... (โค้ด CSS ของ .theme-dear ที่เหลือ) ... */
+.theme-dear .vtuber-links a {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: #b95d36;
+}
+.theme-dear .vtuber-links a:hover {
+    background: linear-gradient(135deg, #e67e22, #f39c12); 
+    color: white;
+}
+.theme-dear .vtuber-info h2,
+.theme-dear .vtuber-info p b,
+.theme-dear .vtuber-section h4,
+.theme-dear .vtuber-tags p b {
+    color: #b95d36;
+}
+.theme-dear .vtuber-info h2 {
+    border-bottom-color: #b95d36;
+}
+
+
+/* --- Theme: Luna Nene --- */
+.theme-luna {
+    --primary-color: #a65e71;
+    --secondary-color: #413154;
+    --background-light: #1a1a1a;
+    --text-dark: #ffffff;
+    --text-light: #cccccc;
+    --card-background: #2c2c2c;
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --border-color: #4d4d4d;
+    --header-text: #ffffff;
+    --sidebar-bg: #333333;
+}
+/* === เพิ่ม: Theming Bar === */
+.theme-luna header {
+    background-color: var(--secondary-color);
+}
+.theme-luna header.scrolled {
+    background-color: rgba(26, 26, 26, 0.8);
+    color: var(--text-dark);
+}
+.theme-luna header.scrolled .menu-toggle {
+    color: var(--text-dark);
+}
+.theme-luna nav#main-nav.active {
+    background-color: var(--secondary-color);
+}
+.theme-luna .footer {
+    background-color: var(--primary-color);
+}
+/* === จบ: Theming Bar === */
+
+.theme-luna .vtuber-links a:hover {
+     background: linear-gradient(135deg, #a65e71, #a65e71);
+}
+
+/* --- Theme: Zea It --- */
+.theme-zea {
+    --primary-color: #2e2e2e;
+    --secondary-color: #d6d6d6;
+    --background-light: #f8f9fa;
+    --text-dark: #222324;
+    --text-light: #343436;
+    --card-background: #ffffff;
+    --header-text: #ffffff;
+    --sidebar-bg: #f8f9fa;
+}
+/* === เพิ่ม: Theming Bar === */
+.theme-zea header {
+    background-color: var(--primary-color);
+}
+.theme-zea header.scrolled {
+    background-color: rgba(248, 249, 250, 0.8);
+    color: var(--text-dark);
+}
+.theme-zea header.scrolled .menu-toggle {
+    color: var(--text-dark);
+}
+.theme-zea nav#main-nav.active {
+    background-color: var(--primary-color);
+}
+.theme-zea .footer {
+    background-color: var(--primary-color);
+}
+/* === จบ: Theming Bar === */
+
+.theme-zea .vtuber-links a {
+    color: #333; 
+}
+.theme-zea .vtuber-links a:hover {
+    background: linear-gradient(135deg, #141414, #313233); 
+    color: white;
+}
+.theme-zea .vtuber-links a.discord-copy:hover {
+    background: linear-gradient(135deg, #4a67e0, #5865f2);
+    color: white;
+}
+
+/* --- Theme: Cha Zele --- */
+.theme-cha {
+    --primary-color: #8b0000; 
+    --secondary-color: #d32f2f; 
+    --background-light: #1a1a1a;
+    --text-dark: #ffffff;
+    --text-light: #cccccc;
+    --card-background: #2c2c2c;
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --border-color: #4d4d4d;
+    --header-text: #ffffff;
+    --sidebar-bg: #333333;
+}
+/* === เพิ่ม: Theming Bar === */
+.theme-cha header {
+    background-color: var(--primary-color);
+}
+.theme-cha header.scrolled {
+    background-color: rgba(26, 26, 26, 0.8);
+    color: var(--text-dark);
+}
+.theme-cha header.scrolled .menu-toggle {
+    color: var(--text-dark);
+}
+.theme-cha nav#main-nav.active {
+    background-color: var(--primary-color);
+}
+.theme-cha .footer {
+    background-color: var(--primary-color);
+}
+/* === จบ: Theming Bar === */
+
+.theme-cha .vtuber-links a:hover {
+    background: linear-gradient(135deg, #b71c1c, #7a0000);
+}
+

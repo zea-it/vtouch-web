@@ -1,0 +1,177 @@
+:root {
+    --primary-color: #1c1d20;
+    --secondary-color: #5a5a5c;
+    --background-light: #ffffff;
+    --text-dark: #333;
+    --text-light: #666;
+    --card-background: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --border-color: #eee;
+}
+
+/* หมายเหตุ: 
+  - .footer, #scrollTopBtn, header ถูกลบออกจากไฟล์นี้
+    เพราะถูกจัดการโดย ../css/style.css แล้ว
+*/
+
+/* Wrapper สำหรับเนื้อหาหลักของหน้า member */
+.main-content-member {
+    width: 100%;
+    max-width: 1200px; /* จำกัดความกว้างสูงสุด */
+    margin: 0 auto; /* จัดกลาง */
+    padding: 80px 20px 0 20px; /* เว้นที่สำหรับ Header ด้านบน และ padding ด้านข้าง */
+    box-sizing: border-box;
+    min-height: calc(100vh - 150px); /* ให้ความสูงอย่างน้อย (100% - footer) */
+}
+
+/* หัวข้อหลัก */
+.page-title {
+    color: var(--primary-color);
+    font-size: 2.8em;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.gen-section {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 80px; /* เพิ่มระยะห่าง */
+    text-align: center;
+}
+
+.gen-section h2 {
+    color: var(--primary-color);
+    font-size: 2.2em;
+    margin-bottom: 40px; /* เพิ่มระยะห่างจาก h2 ไปยัง card */
+    font-weight: 450;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.gen-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.member-container {
+    display: grid;
+    /* ใช้ auto-fit เพื่อให้ responsive อัตโนมัติ */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    row-gap: 50px; /* ระยะห่างแนวตั้ง */
+    column-gap: 30px; /* ระยะห่างแนวนอน */
+    width: 100%;
+    justify-items: center;
+    box-sizing: border-box;
+}
+
+.member-card {
+    background: var(--card-background);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 320px; /* ขยายการ์ดนิดหน่อย */
+    text-align: center;
+    box-shadow: 0 10px 25px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* ทำให้การ์ดสูงเท่ากันในแถว (ถ้า grid จัด) */
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.member-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 1 / 1; /* ทำให้รูปเป็นสี่เหลี่ยมจัตุรัส */
+    object-fit: cover; /* ให้รูปเต็มกรอบโดยไม่เสียสัดส่วน */
+}
+
+.member-card h3 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.7em; /* ปรับขนาดเล็กน้อย */
+    font-weight: 600; /* เพิ่มน้ำหนัก */
+    margin-bottom: 10px;
+}
+
+.member-card .role {
+    font-size: 1.05em;
+    color: var(--text-light);
+    margin: 0 0 10px 0;
+    min-height: 2.2em; /* จองที่ไว้ 2 บรรทัด */
+}
+
+.member-card .gen {
+    font-size: 1em;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    padding: 5px 10px;
+    background-color: #f4f4f4; /* เปลี่ยนสีพื้นหลัง gen */
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.member-card .gen strong {
+    color: var(--primary-color);
+}
+
+.member-card a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 8px;
+    margin-top: auto; /* นี่คือคีย์ที่ทำให้ปุ่มอยู่ล่างสุดเสมอ */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+}
+
+.member-card a:hover {
+    background-color: #3f3f40;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === เพิ่ม Style สำหรับปุ่มที่กดไม่ได้ === */
+.disabled-link {
+    background-color: #aaa;
+    color: #f0f0f0;
+    cursor: not-allowed;
+    pointer-events: none; /* ปิดการ hover */
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+    
+    .gen-section h2 {
+        font-size: 1.8em;
+    }
+
+    .main-content-member {
+        padding-top: 60px; /* ลด padding บนมือถือ */
+    }
+}

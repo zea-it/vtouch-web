@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://www.vtouch.cf/</loc>
+    <lastmod>2025-11-03</lastmod>
+    <image:image>
+      <image:loc>https://www.vtouch.cf/assets/image/Logo_Fix_Full.png</image:loc>
+      <image:title>Vtouch Project Logo</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.vtouch.cf/about-us</loc>
+    <lastmod>2025-11-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vtouch.cf/guidelines</loc>
+    <lastmod>2025-11-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.vtouch.cf/announce</loc>
+    <lastmod>2025-11-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vtouch.cf/member/</loc>
+    <lastmod>2025-11-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vtouch.cf/member/amy-chan</loc>
+    <lastmod>2025-11-03</lastmod>
+    <image:image>
+      <image:loc>https://www.vtouch.cf/assets/image/model/amy-remodel-outfit-2-full.png</image:loc>
+      <image:title>Amy Chan - Vtouch Project</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.vtouch.cf/member/dear</loc>
+    <lastmod>2025-11-03</lastmod>
+    <image:image>
+      <image:loc>https://www.vtouch.cf/assets/image/model/dear-full.png</image:loc>
+      <image:title>Dear - Vtouch Project</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.vtouch.cf/member/luna-nene</loc>
+    <lastmod>2025-11-03</lastmod>
+    <image:image>
+      <image:loc>https://www.vtouch.cf/assets/image/model/luna-nene-full.png</image:loc>
+      <image:title>LUNA NENE - Vtouch Project</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://www.vtouch.cf/member/zea-it</loc>
+    <lastmod>2025-11-03</lastmod>
+    <image:image>
+      <image:loc>https://www.vtouch.cf/assets/image/model/zea-it-full.png</image:loc>
+      <image:title>Zea It - Vtouch Project</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.vtouch.cf/member/cha-zele</loc>
+    <lastmod>2025-11-03</lastmod>
+    <image:image>
+      <image:loc>https://www.vtouch.cf/assets/image/model/cha-zele-remodel-full.png</image:loc>
+      <image:title>Lord Cha Zele - Vtouch Project</image:title>
+    </image:image>
+  </url>
+
+</urlset>

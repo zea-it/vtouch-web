@@ -1,0 +1,704 @@
+/* --- START: Content from style.css --- */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+html,
+body {
+	margin: 0;
+	font-family: 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background: #ffffff;
+	color: #1c1d20;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.6;
+	box-sizing: border-box;
+}
+
+/* ... (โค้ด Header, Nav, Responsive Nav เหมือนเดิม) ... */
+/* -------------------- Header -------------------- */
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background-color: #101113;
+	transition: background-color 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+	color: #ffffff;
+	padding: 0.3rem 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* นี่คือคลาสที่ .js จะเพิ่มให้ตอนเลื่อน */
+header.scrolled {
+	background-color: rgba(0, 0, 0, 0);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+	color: #1c1d20;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 1.2rem;
+	font-weight: 200;
+	text-align: center;
+}
+
+.logo-container {
+	display: flex;
+	align-items: center;
+	padding: 0.05rem;
+	gap: 1rem;
+}
+
+.logo {
+	height: 1.9rem;
+	width: auto;
+	transition: transform 0.3s ease, opacity 0.5s ease;
+	padding-top: 0.3rem;
+}
+
+.logo:hover {
+	transform: scale(1.2);
+}
+
+.menu-toggle {
+	display: none;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.6rem;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+	transform: scale(1.1);
+}
+
+/* -------------------- Navigation -------------------- */
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0rem 2rem;
+	gap: 1.5rem;
+}
+
+nav a {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 1rem;
+	transition: color 1s ease, background-color 0.5s ease, transform 0.3s ease;
+	padding: 2px;
+	border-radius: 4px;
+}
+
+nav a:hover {
+	color: #3a3a3a;
+	background-color: white;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	transform: scale(1.1);
+}
+
+nav.scrolled a {
+	color: #1c1d20;
+}
+
+nav.scrolled a:hover {
+	color: #494944;
+}
+
+/* -------------------- Responsive Menu -------------------- */
+
+@media (max-width: 768px) {
+  header {}
+  
+	.menu-toggle {
+		display: block;
+	}
+
+	nav#main-nav {
+		width: 100%;
+		display: none;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+
+	nav#main-nav a {
+		text-align: center;
+	}
+
+	nav#main-nav.active {
+		display: flex;
+	}
+}
+
+
+/* ========== START: แก้ไข Hero Section ========== */
+.hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* กลับมาจัดกลางแนวตั้ง */
+	align-items: center;
+	height: 100vh; /* ใช้ height 100vh เพื่อให้เต็มจอ */
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/image/Logo_Fix_Full.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: white;
+	box-sizing: border-box; /* สำคัญมาก */
+	
+	/* เราจะเว้นที่ด้านบน (80px) สำหรับ Header ที่ลอยอยู่
+	  และด้านล่าง (40px) เพื่อให้ดูไม่ชิดขอบ
+	  justify-content: center จะจัดเนื้อหาให้อยู่กลางพื้นที่ที่เหลือ
+	*/
+	padding: 80px 1rem 40px 1rem;
+}
+
+.hero h2 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	color: white;
+	margin-top: 0;
+	margin-bottom: 0.5rem; /* ลดช่องว่างด้านล่าง H2 */
+}
+
+.hero p {
+	font-size: 1.2rem;
+	max-width: 70%;
+	line-height: 1.8;
+	color: #f0f0f0;
+	margin: 1rem auto; /* กำหนดช่องว่างบน-ล่าง ของ P */
+}
+
+.hero .slogan {
+	margin: 0.5rem 0 1.5rem 0; /* ลดช่องว่างบน, เพิ่มช่องว่างล่างก่อนถึง social */
+	font-size: 1.2rem;
+	font-style: italic;
+}
+
+.social-links {
+	margin-top: 1rem; /* ลดช่องว่างบน */
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}
+/* ========== END: แก้ไข Hero Section ========== */
+
+
+.social-links a {
+	color: #ffffff;
+	font-size: 1.8rem;
+	transition: color 0.3s ease, transform 0.6s ease;
+}
+
+.social-links a:hover {
+	color: #494944;
+	transform: scale(1.2);
+}
+
+/* -------------------- Sections -------------------- */
+/* ... (โค้ด .section-center, .section-left และอื่นๆ เหมือนเดิม) ... */
+.section-center {
+	padding: 2rem 2rem;
+	background-color: #ffffff;
+	width: 70%;
+	max-width: none;
+	margin: 0 auto;
+	box-shadow: none;
+	border-radius: 0;
+	text-align: center;
+}
+
+.section-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 6rem 2rem;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-content,
+.right-content {
+  flex: 1 1 48%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+.discord-embed {
+  width: 100%;
+  height: 350px;
+  display: block;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.section-center h3,
+.section-left h3 {
+  color: #1c1d20;
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.section-center p,
+.section-left p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.button-to-page {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #3f3f40;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Kanit',
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.button-to-page:hover {
+  background-color: #2e2e2e;
+}
+
+/* -------------------- Mobile Adjustments for section-left -------------------- */
+@media (max-width: 992px) {
+    .section-left {
+        padding: 4rem 1.5rem;
+        gap: 30px;
+    }
+
+    .left-content,
+    .right-content {
+        flex: 1 1 100%;
+        min-width: unset;
+    }
+
+    .section-left h3 {
+        font-size: 1.5rem;
+    }
+
+    .section-left p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-left {
+        padding: 3rem 1rem;
+        gap: 20px;
+    }
+
+    .discord-embed {
+        height: 300px;
+    }
+}
+
+/* -------------------- Footer -------------------- */
+
+.footer {
+	background-color: #1c1d20;
+	color: white;
+	text-align: center;
+	padding: 2rem 1rem;
+	margin-top: 2rem;
+	font-size: 0.95rem;
+}
+
+.footer a {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.3s ease;
+}
+
+.footer a:hover {
+	color: #bbbbbb;
+}
+
+.footer-top p {
+	margin: 0 0 1rem;
+	font-size: 1rem;
+}
+
+.footer-top a {
+	color: #66ccff;
+	text-decoration: none;
+}
+
+.footer-top a:hover {
+	text-decoration: underline;
+}
+
+.footer-menu {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 0.5rem;
+}
+
+.footer-menu a {
+	background-color: transparent;
+	padding: 0.3rem 0.8rem;
+	border: 1px solid #ffffff33;
+	border-radius: 5px;
+	font-size: 0.9rem;
+}
+
+.footer-menu a:hover {
+	background-color: #ffffff22;
+}
+
+/* -------------------- Menu -------------------- */
+
+.menu {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.menu a {
+	background-color: #ffffff;
+	color: #1c1d20;
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	text-decoration: none;
+	border: 1px solid #1c1d20;
+	font-weight: 600;
+}
+
+.menu a:hover {
+	background-color: #1c1d20;
+	color: white;
+}
+
+.text-link {
+	color: #66ccff;
+}
+
+/* -------------------- Scroll To Top Button -------------------- */
+
+#scrollTopBtn {
+	display: none;
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	z-index: 999;
+	background: #222;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	width: 44px;
+	height: 44px;
+	font-size: 1.4rem;
+	cursor: pointer;
+	box-shadow: 0 2px 8px #0001;
+	transition: background 0.2s;
+}
+
+#scrollTopBtn:hover {
+	background: #ffffff;
+	color: #222;
+}
+
+/* -------------------- Animations -------------------- */
+
+@keyframes fadeSlideIn {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.image-fade {
+	animation: imageFade 0.5s ease forwards;
+}
+
+@keyframes imageFade {
+	0% {
+		opacity: 0;
+		transform: scale(0.98);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* -------------------- Mobile Fixes -------------------- */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0rem;
+        gap: 0;
+    }
+
+    .logo-container {
+        width: auto;
+        justify-content: flex-start;
+        padding-right: 0;
+        gap: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        height: 1.7rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+    
+    header.scrolled .menu-toggle {
+        color: #1c1d20;
+    }
+
+    nav#main-nav {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        background-color: #101113;
+        padding: 1rem 1.5rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transition: color 1s ease;
+    }
+
+    nav#main-nav.active {
+        display: flex;
+    }
+    
+    nav#main-nav.scrolled {
+        background-color: #1011130;
+    }
+
+    nav#main-nav a {
+        width: 100%;
+        text-align: left;
+        padding: 8px 0;
+        color: #ffffff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav#main-nav a:last-child {
+        border-bottom: none;
+    }
+
+    nav#main-nav.scrolled a {
+        color: #ffffff;
+    }
+
+    nav#main-nav.scrolled a:hover {
+        background-color: #ffffff22;
+        color: #ffffff;
+    }
+}
+/* --- END: Content from style.css --- */
+
+
+/* --- START: Content from notify.css --- */
+.notification {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 300px;
+    max-width: 90vw;
+    font-family: 'Kanit', sans-serif;
+    color: #1e1e1f;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.notify-box {
+    background-color: #f8f9fa;
+    border-left: 6px solid #212124;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease;
+}
+
+.notify-box.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notify-box h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #171717;
+    font-size: 0.8em;
+}
+
+.notify-box ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.notify-box li {
+    margin-bottom: 10px;
+    font-size: 0.7em;
+}
+
+.notify-box a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #7f7f86;
+    width: 100%;
+    transition: width linear;
+}
+/* --- END: Content from notify.css --- */
+
+
+/* --- START: Content from image-slide.css --- */
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0;
+    box-sizing: border-box;
+    scrollbar-width: none; /* สำหรับ Firefox */
+    -ms-overflow-style: none; /* สำหรับ IE/Edge */
+}
+
+/* ซ่อน scrollbar สำหรับ Webkit browsers (Chrome, Safari) */
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content; /* ให้ track กว้างตามเนื้อหาทั้งหมด */
+    
+    /* Animation สำหรับการเลื่อนแบบต่อเนื่อง */
+    animation: scrollCarousel var(--scroll-duration, 30s) linear infinite;
+}
+
+/* Keyframes สำหรับการเลื่อน */
+@keyframes scrollCarousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* ใช้ CSS Variable ที่จะถูกกำหนดด้วย JavaScript */
+        transform: translateX(calc(-1 * var(--carousel-original-width, 0px))); 
+    }
+}
+
+.carousel-item {
+    flex: 0 0 auto; /* ป้องกันไม่ให้ item หดตัวหรือยืดตัว */
+    margin: 0 20px; /* ลด margin ลงเล็กน้อยเพื่อให้ภาพชิดกันมากขึ้น หรือปรับตามที่คุณต้องการ */
+}
+
+.carousel-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Hover effects สำหรับแต่ละรูป */
+.carousel-item.amy:hover img {
+    content: url('../assets/image/model/amy-logo-1_1.png');
+}
+.carousel-item.dear:hover img {
+    content: url('../assets/image/model/dear-logo-1_1.png');
+}
+.carousel-item.nene:hover img {
+    content: url('../assets/image/model/luna-nene-logo-1_1.png');
+}
+.carousel-item.zea:hover img {
+    content: url('../assets/image/model/zea-it-logo-1_1.png');
+}
+
+/* Responsive adjustments for carousel */
+@media (max-width: 768px) {
+    .carousel-item img {
+        width: 250px; /* ลดขนาดภาพบนมือถือ */
+        height: 250px;
+    }
+    .carousel-item {
+        margin: 0 15px; /* ลด margin บนมือถือ */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item img {
+        width: 200px; /* ลดขนาดภาพบนจอเล็กมากๆ */
+        height: 200px;
+    }
+    .carousel-item {
+        margin: 0 10px; /* ลด margin บนจอเล็กมากๆ */
+    }
+}
+/* --- END: Content from image-slide.css --- */
+
