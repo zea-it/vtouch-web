@@ -283,7 +283,7 @@ body {
     /* ... (โค้ด Responsive ที่เหลือไม่เปลี่ยนแปลง) ... */
     .vtuber-container {
         border-radius: 15px;
-        width: 95%;
+        width: 80%;
         margin: 20px auto;
     }
 
@@ -546,5 +546,6 @@ body {
 .theme-cha .vtuber-links a:hover {
     background: linear-gradient(135deg, #b71c1c, #7a0000);
 }
+
 
 
