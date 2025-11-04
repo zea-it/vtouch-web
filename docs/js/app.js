@@ -176,7 +176,7 @@ function initNotifications() {
         {
             title: 'แนวทางสังกัด',
             messages: [
-                '<strong>แนวทางการทำงานของสังกัด Vtouch Project</strong> อ่านเพิ่มเติมได้ที่ <a href="https://www.vtouch.cf/work-process" target="_blank">คลิกที่นี่</a>',
+                '<strong>แนวทางการทำงานของสังกัด Vtouch Project</strong> อ่านเพิ่มเติมได้ที่ <a href="https://www.vtouch.cf/guidelines" target="_blank">คลิกที่นี่</a>',
             ]
         }
     ];
@@ -242,3 +242,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // เรียกใช้ฟังก์ชันที่ไม่ต้องรอ DOM (หรือรอในตัวมันเอง)
 initNotifications();
+
