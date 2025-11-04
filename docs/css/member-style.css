@@ -111,7 +111,7 @@
 
 /* 4. สถานะ Hover (ต้องเจาะจงกว่า .is-visible) */
 .member-card.is-visible:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     
     /* เร่งความเร็ว transition *เฉพาะ* ตอน hover */
@@ -200,4 +200,5 @@
     .main-content-member {
         padding-top: 80px;
     }
+
 }
