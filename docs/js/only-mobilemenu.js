@@ -19,3 +19,7 @@ function initMobileMenu() {
         });
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    initMobileMenu();
+});
