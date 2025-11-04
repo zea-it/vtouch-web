@@ -23,7 +23,7 @@ body {
   color: var(--text-dark);
   background-color: var(--background-light);
   min-height: 100vh;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   padding-top: 60px; 
 }
 
@@ -553,6 +553,7 @@ body {
 .theme-cha .vtuber-links a:hover {
     background: linear-gradient(135deg, #b71c1c, #7a0000);
 }
+
 
 
 
