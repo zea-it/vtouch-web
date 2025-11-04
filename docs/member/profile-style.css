@@ -4,6 +4,13 @@
   และ Theme สีของแต่ละคน (เช่น .theme-amy, .theme-dear)
 --- */
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 :root {
   --shadow-light: rgba(0, 0, 0, 0.08);
   --border-color: #e0e0e0;
@@ -283,8 +290,8 @@ body {
     /* ... (โค้ด Responsive ที่เหลือไม่เปลี่ยนแปลง) ... */
     .vtuber-container {
         border-radius: 15px;
-        width: 80%;
-        margin: 20px auto;
+        width: auto;
+        margin: 20px;
     }
 
     .vtuber-header {
@@ -546,6 +553,7 @@ body {
 .theme-cha .vtuber-links a:hover {
     background: linear-gradient(135deg, #b71c1c, #7a0000);
 }
+
 
 
 
