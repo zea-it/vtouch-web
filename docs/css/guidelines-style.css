@@ -123,7 +123,7 @@ main {
     position: absolute;
     left: 0;
     top: 0px; /* ปรับตำแหน่งไอคอน */
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .content-block strong, .bold-star {
@@ -203,5 +203,6 @@ main {
     .cta-buttons a { width: 90%; margin: 0 auto; text-align: center; }
 
 }
+
 
 
