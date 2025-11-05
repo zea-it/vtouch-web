@@ -95,47 +95,79 @@ function initHeaderScroll() {
     }
 }
 
-// —————— 3. ส่วนจัดการ Image Slide (ปรับปรุงใหม่ให้ Responsive) ——————
+// —————— 3. ส่วนจัดการ Image Slide (ปรับปรุงใหม่ให้ Responsive และ Loop สมบูรณ์) ——————
 function initImageSlide() {
     const track = document.getElementById("carouselTrack");
     if (!track) return;
 
-    // --- 1. สร้างฟังก์ชันสำหรับคำนวณขนาดโดยเฉพาะ ---
-    // เราจะเรียกใช้ฟังก์ชันนี้ทั้งตอนโหลดและตอนปรับขนาดจอ
-    function calculateCarouselWidth() {
-        let originalWidth = 0;
+    // --- 1. เก็บไอเท็ม Original (จาก HTML) ไว้ ---
+    const originalItems = Array.from(track.children);
+    if (originalItems.length === 0) return;
+
+    // --- 2. สร้างฟังก์ชันสำหรับคำนวณและสร้าง Track ---
+    function setupCarousel() {
         
-        // เรามี 2 ชุดใน HTML, เราจึงคำนวณแค่ครึ่งเดียว (ชุดแรก)
-        const initialItemsCount = Math.floor(track.children.length / 2);
-        if (initialItemsCount === 0) return;
+        // --- 2a. คำนวณความกว้างของ 1 ชุด (Original) ---
+        // เราต้องใส่ชุด original กลับเข้าไปใน track ก่อนเพื่อวัดขนาด
+        track.innerHTML = ''; // ล้าง track
+        originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
 
-        // วนลูปเฉพาะชุดแรกเพื่อหาความกว้างรวม
-        for (let i = 0; i < initialItemsCount; i++) {
-            const item = track.children[i];
-            if (item) {
-                originalWidth += item.offsetWidth;
-                const style = getComputedStyle(item);
-                originalWidth += parseFloat(style.marginLeft) + parseFloat(style.marginRight);
-            }
-        }
+        let originalSetWidth = 0; // ความกว้างของ 1 ชุด (4 ชิ้น)
+        Array.from(track.children).forEach(item => {
+            originalSetWidth += item.offsetWidth;
+            const style = getComputedStyle(item);
+            originalSetWidth += parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+        });
 
-        // 2. กำหนด CSS Variable ให้ Animation
-        track.style.setProperty('--carousel-original-width', `${originalWidth}px`);
+        if (originalSetWidth === 0) return; // ถ้าหาความกว้างไม่ได้ ให้หยุด
 
-        // 3. ปรับความเร็วตามความกว้าง (Dynamic Speed)
+        // --- 2b. คำนวณจำนวนชุดที่ต้องใช้ ---
+        const viewportWidth = window.innerWidth;
+        
+        // เราจะสร้าง "Set A" (ชุดที่จะเลื่อน) โดย copy ไอเท็มจนกว่า
+        // ความกว้างของ Set A (setNameWidth) จะ *มากกว่า* ความกว้างของหน้าจอ
+        
+        const itemsToBuildSetA = [];
+        let setAWidth = 0; // ความกว้างจริงของ Set A ที่จะสร้าง
+        
+        do {
+            originalItems.forEach(item => {
+                itemsToBuildSetA.push(item.cloneNode(true));
+            });
+            setAWidth += originalSetWidth;
+        } while (setAWidth < viewportWidth)
+        
+        // ตอนนี้ setAWidth คือความกว้างของ "Set A" ที่กว้างพอดีจอ (หรือมากกว่า)
+
+        // --- 2c. สร้าง Track ใหม่ทั้งหมด ---
+        // เราต้องการ [Set A] [Set A] (เพื่อวน Loop)
+        track.innerHTML = ''; // ล้างของเก่าอีกครั้ง
+        
+        const setAFragment = document.createDocumentFragment();
+        itemsToBuildSetA.forEach(item => setAFragment.appendChild(item.cloneNode(true)));
+        
+        const setBFragment = document.createDocumentFragment();
+        itemsToBuildSetA.forEach(item => setBFragment.appendChild(item.cloneNode(true))); // set B คือ copy ของ set A
+
+        track.appendChild(setAFragment); // เพิ่ม [Set A]
+        track.appendChild(setBFragment); // เพิ่ม [Set B]
+
+        // --- 2d. กำหนด CSS Variable ---
+        // ความกว้างที่จะเลื่อน คือความกว้างของ "Set A"
+        track.style.setProperty('--carousel-original-width', `${setAWidth}px`);
+
+        // --- 2e. ปรับความเร็วตามความกว้าง (Dynamic Speed) ---
         const speedPerSecond = 50; // 50px ต่อวินาที
-        let durationInSeconds = originalWidth / speedPerSecond;
+        let durationInSeconds = setAWidth / speedPerSecond;
 
-        // 4. จำกัดความเร็ว (ไม่ให้ช้า/เร็วเกินไป)
-        const minDuration = 15; // อย่างน้อย 15 วินาที
-        const maxDuration = 60; // ไม่เกิน 60 วินาที
+        const minDuration = 15;
+        const maxDuration = 60;
         durationInSeconds = Math.max(minDuration, Math.min(durationInSeconds, maxDuration));
         
         track.style.setProperty('--scroll-duration', `${durationInSeconds}s`);
     }
 
-    // --- 5. สร้าง Debounce Function ---
-    // (ฟังก์ชันนี้ช่วยป้องกันไม่ให้ 'resize' ทำงานถี่เกินไปจนค้าง)
+    // --- 3. สร้าง Debounce Function (เหมือนเดิม) ---
     function debounce(func, delay = 250) {
         let timeoutId;
         return (...args) => {
@@ -146,16 +178,19 @@ function initImageSlide() {
         };
     }
 
-    // --- 6. เรียกใช้งาน ---
+    // --- 4. เรียกใช้งาน ---
     
     // เรียกครั้งแรกเมื่อ DOM โหลด
-    calculateCarouselWidth();
+    // เราต้องรอให้รูปโหลดเสร็จก่อน (หรือรอสักครู่) เพื่อให้ offsetWidth ถูกต้อง
+    // แต่ในเคสนี้ เรารอ DOMContentLoaded ก็พอ (เพราะรูปมีขนาดคงที่ใน CSS)
+    setupCarousel();
+
 
     // สร้างฟังก์ชัน resize ที่ผ่านการ debounce แล้ว
-    const debouncedCalculate = debounce(calculateCarouselWidth, 250);
+    const debouncedSetup = debounce(setupCarousel, 250);
 
     // เรียกใช้ฟังก์ชันนี้ *ทุกครั้ง* ที่มีการปรับขนาดหน้าต่าง
-    window.addEventListener('resize', debouncedCalculate);
+    window.addEventListener('resize', debouncedSetup);
 }
 
 // —————— 4. ส่วนจัดการกล่องแจ้งเตือน (จาก notify.js) ——————
@@ -242,4 +277,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // เรียกใช้ฟังก์ชันที่ไม่ต้องรอ DOM (หรือรอในตัวมันเอง)
 initNotifications();
+
 
