@@ -122,7 +122,7 @@ main {
     color: var(--bts-primary-color);
     position: absolute;
     left: 0;
-    top: 2px; /* ปรับตำแหน่งไอคอน */
+    top: 0px; /* ปรับตำแหน่งไอคอน */
     font-size: 1.1em;
 }
 
@@ -203,4 +203,5 @@ main {
     .cta-buttons a { width: 90%; margin: 0 auto; text-align: center; }
 
 }
+
 
