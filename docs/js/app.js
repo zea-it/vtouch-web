@@ -278,4 +278,3 @@ document.addEventListener("DOMContentLoaded", function() {
 // เรียกใช้ฟังก์ชันที่ไม่ต้องรอ DOM (หรือรอในตัวมันเอง)
 initNotifications();
 
-
