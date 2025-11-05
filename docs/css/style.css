@@ -630,75 +630,95 @@ nav.scrolled a:hover {
 
 .carousel-track {
     display: flex;
-    width: max-content; /* ให้ track กว้างตามเนื้อหาทั้งหมด */
-    
-    /* Animation สำหรับการเลื่อนแบบต่อเนื่อง */
+    width: max-content; 
     animation: scrollCarousel var(--scroll-duration, 30s) linear infinite;
 }
 
-/* Keyframes สำหรับการเลื่อน */
+.carousel-track:hover {
+    /* animation-play-state: paused; */
+
+}
+
+/* Keyframes สำหรับการเลื่อน (เหมือนเดิม) */
 @keyframes scrollCarousel {
     0% {
         transform: translateX(0);
     }
     100% {
-        /* ใช้ CSS Variable ที่จะถูกกำหนดด้วย JavaScript */
         transform: translateX(calc(-1 * var(--carousel-original-width, 0px))); 
     }
 }
 
+/* --- (เริ่มส่วนที่แก้ไข) --- */
+
 .carousel-item {
-    flex: 0 0 auto; /* ป้องกันไม่ให้ item หดตัวหรือยืดตัว */
-    margin: 0 20px; /* ลด margin ลงเล็กน้อยเพื่อให้ภาพชิดกันมากขึ้น หรือปรับตามที่คุณต้องการ */
+    flex: 0 0 auto; /* ป้องกันไม่ให้ item หด */
+    margin: 0 20px;
+    position: relative; /* 1. ทำให้เป็นตัวหลักในการซ้อน */
+    
+    /* 2. ย้ายขนาดจาก img มาไว้ที่นี่ */
+    width: 300px;
+    height: 300px;
 }
 
 .carousel-item img {
-    width: 300px;
-    height: 300px;
+    /* 3. ทำให้ภาพซ้อนกันและเต็มกรอบ */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* คุณสมบัติเดิมของ img */
     object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+    border-radius: 20px;
+    transition: transform 0.3s ease, opacity 0.4s ease; /* 4. เพิ่ม opacity transition */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     background-color: #ffffff;
 }
 
+/* 5. เอฟเฟกต์ Scale (ขยาย) ตอน hover (เหมือนเดิม) */
 .carousel-item:hover img {
     transform: scale(1.05);
 }
 
-/* Hover effects สำหรับแต่ละรูป */
-.carousel-item.amy:hover img {
-    content: url('../assets/image/model/amy-logo-1_1.png');
+/* 6. กฎการแสดงผล (ใหม่) */
+.carousel-item .img-portrait {
+    opacity: 1; /* ปกติ: แสดงภาพคน */
 }
-.carousel-item.dear:hover img {
-    content: url('../assets/image/model/dear-logo-1_1.png');
-}
-.carousel-item.nene:hover img {
-    content: url('../assets/image/model/luna-nene-logo-1_1.png');
-}
-.carousel-item.zea:hover img {
-    content: url('../assets/image/model/zea-it-logo-1_1.png');
+.carousel-item .img-logo {
+    opacity: 0; /* ปกติ: ซ่อนภาพโลโก้ */
 }
 
-/* Responsive adjustments for carousel */
+/* 7. กฎตอน Hover (ใหม่) */
+.carousel-item:hover .img-portrait {
+    opacity: 0; /* Hover: ซ่อนภาพคน */
+}
+.carousel-item:hover .img-logo {
+    opacity: 1; /* Hover: แสดงภาพโลโก้ */
+}
+
+/* 8. ลบโค้ด content:url() เก่าทิ้ง */
+/* .carousel-item.amy:hover img { ... } (และอันอื่นๆ) ถูกลบออกไปแล้ว */
+
+
+/* --- (จบส่วนที่แก้ไข) --- */
+
+
+/* Responsive adjustments (ย้าย width/height ไปที่ .carousel-item) */
 @media (max-width: 768px) {
-    .carousel-item img {
+    .carousel-item {
         width: 250px; /* ลดขนาดภาพบนมือถือ */
         height: 250px;
-    }
-    .carousel-item {
         margin: 0 15px; /* ลด margin บนมือถือ */
     }
 }
 
 @media (max-width: 576px) {
-    .carousel-item img {
+    .carousel-item {
         width: 200px; /* ลดขนาดภาพบนจอเล็กมากๆ */
         height: 200px;
-    }
-    .carousel-item {
         margin: 0 10px; /* ลด margin บนจอเล็กมากๆ */
     }
 }
 /* --- END: Content from image-slide.css --- */
-
