@@ -116,7 +116,7 @@ main {
 }
 
 .content-block ul li::before {
-    content: "\f00c"; /* FontAwesome check icon */
+    content: "\2022"; /* FontAwesome icon */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     color: var(--bts-primary-color);
@@ -203,3 +203,4 @@ main {
     .cta-buttons a { width: 90%; margin: 0 auto; text-align: center; }
 
 }
+
